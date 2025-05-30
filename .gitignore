@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual Environment
+venv/
+
+# Django
+django_app/db.sqlite3
+# migrations/* !(__init__.py) # You might want to commit migrations, but not auto-generated ones from third party apps usually
+# If you set STATIC_ROOT for collectstatic, add it here e.g.:
+# staticfiles_collected/
+
+# Operating System
+.DS_Store
+Thumbs.db
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log
+
+# Coverage reports
+.coverage
+coverage.xml
+htmlcov/
+
+# Secrets (add any files you use for secrets)
+# .env
+# local_settings.py
+# secrets.json 
