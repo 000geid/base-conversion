@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-30 12:25+0000\n"
+"POT-Creation-Date: 2025-05-30 12:58+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,104 +17,194 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: apps/conversion_app/templates/index.html:7
-#: apps/conversion_app/templates/index.html:45
+#: django_app/apps/conversion_app/templates/index.html:7
+#: django_app/apps/conversion_app/templates/index.html:48
 msgid "Number Converter"
 msgstr "Convertidor de Números"
 
-#: apps/conversion_app/templates/index.html:39
+#: django_app/apps/conversion_app/templates/index.html:42
 msgid "Welcome to Our Utility App!"
 msgstr "¡Bienvenido a Nuestra Aplicación de Utilidades!"
 
-#: apps/conversion_app/templates/index.html:40
+#: django_app/apps/conversion_app/templates/index.html:43
 msgid ""
 "Your one-stop solution for various conversions and calculations. Explore the "
 "tabs below to access different tools."
-msgstr "Tu solución integral para diversas conversiones y cálculos. Explora las pestañas a continuación para acceder a diferentes herramientas."
+msgstr ""
+"Tu solución integral para diversas conversiones y cálculos. Explora las "
+"pestañas a continuación para acceder a diferentes herramientas."
 
-#: apps/conversion_app/templates/index.html:48
-msgid "Unit Converter (Coming Soon)"
-msgstr "Convertidor de Unidades (Próximamente)"
+#: django_app/apps/conversion_app/templates/index.html:51
+#: django_app/apps/conversion_app/templates/index.html:115
+msgid "Arithmetic Calculator"
+msgstr "Calculadora Aritmética"
 
-#: apps/conversion_app/templates/index.html:51
+#: django_app/apps/conversion_app/templates/index.html:54
 msgid "Calculator (Coming Soon)"
 msgstr "Calculadora (Próximamente)"
 
-#: apps/conversion_app/templates/index.html:57
+#: django_app/apps/conversion_app/templates/index.html:60
 msgid "Number Base Converter"
 msgstr "Convertidor de Base Numérica"
 
-#: apps/conversion_app/templates/index.html:61
+#: django_app/apps/conversion_app/templates/index.html:65
 msgid "Enter number:"
 msgstr "Ingrese número:"
 
-#: apps/conversion_app/templates/index.html:67
+#: django_app/apps/conversion_app/templates/index.html:71
 msgid "From base:"
 msgstr "Desde la base:"
 
-#: apps/conversion_app/templates/index.html:69
-#: apps/conversion_app/templates/index.html:84
+#: django_app/apps/conversion_app/templates/index.html:73
+#: django_app/apps/conversion_app/templates/index.html:88
+#: django_app/apps/conversion_app/templates/index.html:133
 msgid "Decimal"
 msgstr "Decimal"
 
-#: apps/conversion_app/templates/index.html:70
-#: apps/conversion_app/templates/index.html:85
+#: django_app/apps/conversion_app/templates/index.html:74
+#: django_app/apps/conversion_app/templates/index.html:89
+#: django_app/apps/conversion_app/templates/index.html:134
 msgid "Binary"
 msgstr "Binario"
 
-#: apps/conversion_app/templates/index.html:71
-#: apps/conversion_app/templates/index.html:86
+#: django_app/apps/conversion_app/templates/index.html:75
+#: django_app/apps/conversion_app/templates/index.html:90
+#: django_app/apps/conversion_app/templates/index.html:135
 msgid "Octal"
 msgstr "Octal"
 
-#: apps/conversion_app/templates/index.html:72
-#: apps/conversion_app/templates/index.html:87
+#: django_app/apps/conversion_app/templates/index.html:76
+#: django_app/apps/conversion_app/templates/index.html:91
+#: django_app/apps/conversion_app/templates/index.html:136
 msgid "Hexadecimal"
 msgstr "Hexadecimal"
 
-#: apps/conversion_app/templates/index.html:76
+#: django_app/apps/conversion_app/templates/index.html:80
 msgid "Swap bases"
 msgstr "Intercambiar bases"
 
-#: apps/conversion_app/templates/index.html:82
+#: django_app/apps/conversion_app/templates/index.html:86
 msgid "To base:"
 msgstr "A la base:"
 
-#: apps/conversion_app/templates/index.html:92
+#: django_app/apps/conversion_app/templates/index.html:96
 msgid "Convert"
 msgstr "Convertir"
 
-#: apps/conversion_app/templates/index.html:97
+#: django_app/apps/conversion_app/templates/index.html:101
+#: django_app/apps/conversion_app/templates/index.html:161
 msgid "Result:"
 msgstr "Resultado:"
 
-#: apps/conversion_app/templates/index.html:104
+#: django_app/apps/conversion_app/templates/index.html:108
+#: django_app/apps/conversion_app/templates/index.html:169
 msgid "Error:"
 msgstr "Error:"
 
-#: apps/conversion_app/templates/index.html:111
-msgid "Unit Converter"
-msgstr "Convertidor de Unidades"
+#: django_app/apps/conversion_app/templates/index.html:121
+msgid "Number 1:"
+msgstr "Número 1:"
 
-#: apps/conversion_app/templates/index.html:112
-#: apps/conversion_app/templates/index.html:117
-msgid "This feature is coming soon!"
-msgstr "¡Esta funcionalidad estará disponible próximamente!"
+#: django_app/apps/conversion_app/templates/index.html:125
+msgid "Number 2:"
+msgstr "Número 2:"
 
-#: apps/conversion_app/templates/index.html:116
+#: django_app/apps/conversion_app/templates/index.html:131
+msgid "Base for numbers:"
+msgstr "Base para los números:"
+
+#: django_app/apps/conversion_app/templates/index.html:143
+msgid "Number 1 (Decimal):"
+msgstr "Número 1 (Decimal):"
+
+#: django_app/apps/conversion_app/templates/index.html:146
+msgid "Number 2 (Decimal):"
+msgstr "Número 2 (Decimal):"
+
+#: django_app/apps/conversion_app/templates/index.html:152
+msgid "Add"
+msgstr "Sumar"
+
+#: django_app/apps/conversion_app/templates/index.html:153
+msgid "Subtract"
+msgstr "Restar"
+
+#: django_app/apps/conversion_app/templates/index.html:154
+msgid "Multiply"
+msgstr "Multiplicar"
+
+#: django_app/apps/conversion_app/templates/index.html:155
+msgid "Divide"
+msgstr "Dividir"
+
+#: django_app/apps/conversion_app/templates/index.html:162
+msgid "In original base"
+msgstr "En base original"
+
+#: django_app/apps/conversion_app/templates/index.html:163
+msgid "In Decimal:"
+msgstr "En Decimal:"
+
+#: django_app/apps/conversion_app/templates/index.html:176
 msgid "Calculator"
 msgstr "Calculadora"
 
-#: apps/conversion_app/views.py:44
+#: django_app/apps/conversion_app/templates/index.html:177
+msgid "This feature is coming soon!"
+msgstr "¡Esta funcionalidad estará disponible próximamente!"
+
+#: django_app/apps/conversion_app/views.py:15
+msgid "Invalid base for conversion to decimal."
+msgstr "Base inválida para la conversión a decimal."
+
+#: django_app/apps/conversion_app/views.py:27
+msgid "Invalid base for conversion from decimal."
+msgstr "Base inválida para la conversión desde decimal."
+
+#: django_app/apps/conversion_app/views.py:56
+msgid "Please enter a number to convert."
+msgstr "Por favor, ingrese un número para convertir."
+
+#: django_app/apps/conversion_app/views.py:61
 #, python-brace-format
 msgid ""
-"Error converting number: {error_message}. Please enter a valid number for "
-"the selected input base."
+"Error converting number: {error_message}. Please check your input and "
+"selected bases."
 msgstr ""
-"Error al convertir el número: {error_message}. Por favor, ingrese un número "
-"válido para la base de entrada seleccionada."
+"Error al convertir el número: {error_message}. Por favor, revise su entrada y "
+"las bases seleccionadas."
 
-#: apps/conversion_app/views.py:46
+#: django_app/apps/conversion_app/views.py:63
 #, python-brace-format
-msgid "An unexpected error occurred: {error_message}"
-msgstr "Ocurrió un error inesperado: {error_message}"
+msgid "An unexpected error occurred during conversion: {error_message}"
+msgstr "Ocurrió un error inesperado durante la conversión: {error_message}"
+
+#: django_app/apps/conversion_app/views.py:79
+msgid "Please enter both numbers for calculation."
+msgstr "Por favor, ingrese ambos números para la calculación."
+
+#: django_app/apps/conversion_app/views.py:81
+msgid "Please select an operation."
+msgstr "Por favor, seleccione una operación."
+
+#: django_app/apps/conversion_app/views.py:97
+msgid "Division by zero is not allowed."
+msgstr "La división por cero no está permitida."
+
+#: django_app/apps/conversion_app/views.py:101
+msgid "Invalid operation selected."
+msgstr "Operación inválida seleccionada."
+
+#: django_app/apps/conversion_app/views.py:123
+#, python-brace-format
+msgid ""
+"Error in calculation: {error_message}. Please check your inputs and selected "
+"base."
+msgstr ""
+"Error en la calculación: {error_message}. Por favor, revise sus entradas y la "
+"base seleccionada."
+
+#: django_app/apps/conversion_app/views.py:125
+#, python-brace-format
+msgid "An unexpected error occurred during calculation: {error_message}"
+msgstr "Ocurrió un error inesperado durante la calculación: {error_message}"

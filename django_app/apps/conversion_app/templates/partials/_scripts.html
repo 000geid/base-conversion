@@ -1,0 +1,36 @@
+<script>
+    document.getElementById('swap_bases_button').addEventListener('click', function() {
+        var inputBaseSelect = document.getElementById('input_base');
+        var outputBaseSelect = document.getElementById('output_base');
+
+        var tempValue = inputBaseSelect.value;
+        inputBaseSelect.value = outputBaseSelect.value;
+        outputBaseSelect.value = tempValue;
+    });
+
+    const requestMethod = "{{ request.method|escapejs }}";
+    // For Converter Tab
+    const converterNumberInput = "{{ number_input|escapejs|default_if_none:'' }}";
+    const converterResultExists = "{{ result|escapejs|default_if_none:'' }}" !== "";
+    const converterErrorExists = "{{ error|escapejs|default_if_none:'' }}" !== "";
+    const isConverterActive = requestMethod === 'POST' && ("{{ form_type|escapejs }}" === "base_converter");
+
+    // For Arithmetic Calculator Tab
+    const calculatorFormType = "{{ form_type|escapejs }}";
+    const calcOperationPerformed = "{{ calc_operation|escapejs|default_if_none:'' }}" !== "";
+    const isCalculatorActive = requestMethod === 'POST' && (calculatorFormType === "arithmetic_calculator");
+    
+    if (isConverterActive) {
+        var converterTabElement = document.getElementById('converter-tab');
+        if (converterTabElement) {
+             var converterTab = new bootstrap.Tab(converterTabElement);
+             converterTab.show();
+        }
+    } else if (isCalculatorActive) {
+        var calculatorTabElement = document.getElementById('arithmetic-calculator-tab');
+        if (calculatorTabElement) {
+             var calculatorTab = new bootstrap.Tab(calculatorTabElement);
+             calculatorTab.show();
+        }
+    }
+</script> 
