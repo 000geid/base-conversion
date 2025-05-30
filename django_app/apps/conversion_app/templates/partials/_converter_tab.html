@@ -1,0 +1,55 @@
+{% load i18n %}
+<div class="tab-pane fade show active" id="converter" role="tabpanel" aria-labelledby="converter-tab">
+    <h2 class="mb-4 text-center">{% trans "Number Base Converter" %}</h2>
+    <form method="post" class="card p-4 shadow-sm">
+        {% csrf_token %}
+        <input type="hidden" name="form_type" value="base_converter">
+        <div class="mb-3">
+            <label for="number_input" class="form-label">{% trans "Enter number:" %}</label>
+            <input type="text" class="form-control" id="number_input" name="number_input" value="{{ number_input|default_if_none:'' }}">
+        </div>
+
+        <div class="row mb-3 align-items-center">
+            <div class="col-md-5">
+                <label for="input_base" class="form-label">{% trans "From base:" %}</label>
+                <select class="form-select" id="input_base" name="input_base">
+                    <option value="decimal" {% if input_base_selected == 'decimal' %}selected{% endif %}>{% trans "Decimal" %}</option>
+                    <option value="binary" {% if input_base_selected == 'binary' %}selected{% endif %}>{% trans "Binary" %}</option>
+                    <option value="octal" {% if input_base_selected == 'octal' %}selected{% endif %}>{% trans "Octal" %}</option>
+                    <option value="hexadecimal" {% if input_base_selected == 'hexadecimal' %}selected{% endif %}>{% trans "Hexadecimal" %}</option>
+                </select>
+            </div>
+            <div class="col-md-2 text-center mt-4 mt-md-0">
+                {% trans "Swap bases" as swap_bases_title %}
+                <button type="button" class="btn btn-secondary btn-sm" id="swap_bases_button" title="{{ swap_bases_title }}">
+                    &#x21C4; 
+                </button>
+            </div>
+            <div class="col-md-5">
+                <label for="output_base" class="form-label">{% trans "To base:" %}</label>
+                <select class="form-select" id="output_base" name="output_base">
+                    <option value="decimal" {% if output_base_selected == 'decimal' %}selected{% endif %}>{% trans "Decimal" %}</option>
+                    <option value="binary" {% if output_base_selected == 'binary' %}selected{% endif %}>{% trans "Binary" %}</option>
+                    <option value="octal" {% if output_base_selected == 'octal' %}selected{% endif %}>{% trans "Octal" %}</option>
+                    <option value="hexadecimal" {% if output_base_selected == 'hexadecimal' %}selected{% endif %}>{% trans "Hexadecimal" %}</option>
+                </select>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">{% trans "Convert" %}</button>
+    </form>
+
+    {% if result %}
+        <div class="alert alert-success mt-4" role="alert">
+            <h4 class="alert-heading">{% trans "Result:" %}</h4>
+            <p class="mb-0">{{ result }}</p>
+        </div>
+    {% endif %}
+
+    {% if error %}
+        <div class="alert alert-danger mt-4" role="alert">
+            <h4 class="alert-heading">{% trans "Error:" %}</h4>
+            <p class="mb-0">{{ error }}</p>
+        </div>
+    {% endif %}
+</div> 

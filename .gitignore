@@ -10,7 +10,7 @@ venv/
 django_app/db.sqlite3
 # migrations/* !(__init__.py) # You might want to commit migrations, but not auto-generated ones from third party apps usually
 # If you set STATIC_ROOT for collectstatic, add it here e.g.:
-# staticfiles_collected/
+staticfiles_collected/
 
 # Operating System
 .DS_Store

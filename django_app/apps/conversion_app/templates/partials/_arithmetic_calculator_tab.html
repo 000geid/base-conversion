@@ -1,0 +1,61 @@
+{% load i18n %}
+<div class="tab-pane fade" id="arithmetic-calculator" role="tabpanel" aria-labelledby="arithmetic-calculator-tab">
+    <h2 class="mb-4 text-center">{% trans "Arithmetic Calculator" %}</h2>
+    <form method="post" class="card p-4 shadow-sm">
+        {% csrf_token %}
+        <input type="hidden" name="form_type" value="arithmetic_calculator">
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="calc_number1" class="form-label">{% trans "Number 1:" %}</label>
+                <input type="text" class="form-control" id="calc_number1" name="calc_number1" value="{{ calc_number1|default_if_none:'' }}">
+            </div>
+            <div class="col-md-6">
+                <label for="calc_number2" class="form-label">{% trans "Number 2:" %}</label>
+                <input type="text" class="form-control" id="calc_number2" name="calc_number2" value="{{ calc_number2|default_if_none:'' }}">
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="calc_base" class="form-label">{% trans "Base for numbers:" %}</label>
+            <select class="form-select" id="calc_base" name="calc_base">
+                <option value="decimal" {% if calc_base_selected == 'decimal' %}selected{% endif %}>{% trans "Decimal" %}</option>
+                <option value="binary" {% if calc_base_selected == 'binary' %}selected{% endif %}>{% trans "Binary" %}</option>
+                <option value="octal" {% if calc_base_selected == 'octal' %}selected{% endif %}>{% trans "Octal" %}</option>
+                <option value="hexadecimal" {% if calc_base_selected == 'hexadecimal' %}selected{% endif %}>{% trans "Hexadecimal" %}</option>
+            </select>
+        </div>
+        
+        {% if calc_number1_decimal is not None or calc_number2_decimal is not None %}
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <p>{% trans "Number 1 (Decimal):" %} {{ calc_number1_decimal|default_if_none:'' }}</p>
+            </div>
+            <div class="col-md-6">
+                <p>{% trans "Number 2 (Decimal):" %} {{ calc_number2_decimal|default_if_none:'' }}</p>
+            </div>
+        </div>
+        {% endif %}
+
+        <div class="d-flex justify-content-center flex-wrap calculator-ops mb-3">
+            <button type="submit" name="calc_operation" value="add" class="btn btn-info">{% trans "Add" %} (+)</button>
+            <button type="submit" name="calc_operation" value="subtract" class="btn btn-warning">{% trans "Subtract" %} (-)</button>
+            <button type="submit" name="calc_operation" value="multiply" class="btn btn-success">{% trans "Multiply" %} (×)</button>
+            <button type="submit" name="calc_operation" value="divide" class="btn btn-danger">{% trans "Divide" %} (÷)</button>
+        </div>
+    </form>
+
+    {% if calc_result_original_base is not None %}
+        <div class="alert alert-success mt-4" role="alert">
+            <h4 class="alert-heading">{% trans "Result:" %}</h4>
+            <p>{% trans "In original base" %} ({{ calc_base_selected }}): {{ calc_result_original_base }}</p>
+            <p>{% trans "In Decimal:" %} {{ calc_result_decimal }}</p>
+        </div>
+    {% endif %}
+
+    {% if calc_error %}
+        <div class="alert alert-danger mt-4" role="alert">
+            <h4 class="alert-heading">{% trans "Error:" %}</h4>
+            <p class="mb-0">{{ calc_error }}</p>
+        </div>
+    {% endif %}
+</div> 

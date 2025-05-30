@@ -1,60 +1,32 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Number Converter</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-    <div class="container mt-5">
-        <h1 class="mb-4 text-center">Number Converter</h1>
-        <form method="post" class="card p-4 shadow-sm">
-            {% csrf_token %}
-            <div class="mb-3">
-                <label for="number_input" class="form-label">Enter number:</label>
-                <input type="text" class="form-control" id="number_input" name="number_input" value="{{ number_input|default:'' }}">
-            </div>
+{% extends "base.html" %}
+{% load i18n %}
 
-            <div class="row mb-3">
-                <div class="col-md-6">
-                    <label for="input_base" class="form-label">From base:</label>
-                    <select class="form-select" id="input_base" name="input_base">
-                        <option value="decimal" {% if input_base_selected == 'decimal' %}selected{% endif %}>Decimal</option>
-                        <option value="binary" {% if input_base_selected == 'binary' %}selected{% endif %}>Binary</option>
-                        <option value="octal" {% if input_base_selected == 'octal' %}selected{% endif %}>Octal</option>
-                        <option value="hexadecimal" {% if input_base_selected == 'hexadecimal' %}selected{% endif %}>Hexadecimal</option>
-                    </select>
-                </div>
-                <div class="col-md-6">
-                    <label for="output_base" class="form-label">To base:</label>
-                    <select class="form-select" id="output_base" name="output_base">
-                        <option value="decimal" {% if output_base_selected == 'decimal' %}selected{% endif %}>Decimal</option>
-                        <option value="binary" {% if output_base_selected == 'binary' %}selected{% endif %}>Binary</option>
-                        <option value="octal" {% if output_base_selected == 'octal' %}selected{% endif %}>Octal</option>
-                        <option value="hexadecimal" {% if output_base_selected == 'hexadecimal' %}selected{% endif %}>Hexadecimal</option>
-                    </select>
-                </div>
-            </div>
+{% block title %}{% trans "Number Converter" %}{% endblock %}
 
-            <button type="submit" class="btn btn-primary w-100">Convert</button>
-        </form>
+{% block intro %}
+    {% include "partials/_intro_section.html" %}
+{% endblock %}
 
-        {% if result %}
-            <div class="alert alert-success mt-4" role="alert">
-                <h4 class="alert-heading">Result:</h4>
-                <p class="mb-0">{{ result }}</p>
-            </div>
-        {% endif %}
+{% block content %}
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="converter-tab" data-bs-toggle="tab" data-bs-target="#converter" type="button" role="tab" aria-controls="converter" aria-selected="true">{% trans "Number Converter" %}</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="arithmetic-calculator-tab" data-bs-toggle="tab" data-bs-target="#arithmetic-calculator" type="button" role="tab" aria-controls="arithmetic-calculator" aria-selected="false">{% trans "Arithmetic Calculator" %}</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="simple-calculator-tab" data-bs-toggle="tab" data-bs-target="#simple-calculator" type="button" role="tab" aria-controls="simple-calculator" aria-selected="false">{% trans "Calculator (Coming Soon)" %}</button>
+        </li>
+    </ul>
 
-        {% if error %}
-            <div class="alert alert-danger mt-4" role="alert">
-                <h4 class="alert-heading">Error:</h4>
-                <p class="mb-0">{{ error }}</p>
-            </div>
-        {% endif %}
+    <div class="tab-content" id="myTabContent">
+        {% include "partials/_converter_tab.html" %}
+        {% include "partials/_arithmetic_calculator_tab.html" %}
+        {% include "partials/_simple_calculator_tab.html" %}
     </div>
+{% endblock %}
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html> 
+{% block scripts %}
+    {% include "partials/_scripts.html" %}
+{% endblock %} 
