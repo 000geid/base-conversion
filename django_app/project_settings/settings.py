@@ -21,12 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent # This should now point to 'dj
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-um&osr=spcvse$oj5d^bnz=ir8-p-i$$hb$-%2mpfmazh+vk*)'
+SECRET_KEY = 'G9VRmVEgDn3E7plPi0bEA2z-teOuXcV5mBszsBbXJcWRq9b-uLVFQPqODYXR6UqdIvI'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -126,7 +127,8 @@ STATIC_URL = 'static/'
 #     BASE_DIR / "static", # This would point to django_app/static/
 # ]
 # For deployment, you'll also need STATIC_ROOT:
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_collected')
+STATIC_ROOT = BASE_DIR / 'staticfiles_collected' # Added for collectstatic
+STATIC_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 # Default primary key field type
