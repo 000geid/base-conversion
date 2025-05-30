@@ -24,9 +24,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent # This should now point to 'dj
 SECRET_KEY = 'G9VRmVEgDn3E7plPi0bEA2z-teOuXcV5mBszsBbXJcWRq9b-uLVFQPqODYXR6UqdIvI'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+
+# Production Security Settings
+CSRF_COOKIE_SECURE = False
+# SESSION_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = False # Explicitly False for local dev
+# SECURE_HSTS_SECONDS = 2592000  # 30 days. Increase after testing.
+# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+# SECURE_HSTS_PRELOAD = True
+# CSRF_TRUSTED_ORIGINS = [] # Add 'https://yourdomain.tld', 'https://www.yourdomain.tld' here
 
 
 # Application definition
@@ -42,9 +51,10 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
+    'django.middleware.security.SecurityMiddleware', # Re-enabled
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -107,6 +117,17 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
+
+# Add Spanish as an available language
+LANGUAGES = [
+    ('en', 'English'),
+    ('es', 'Spanish'),
+]
+
+# Specify the path for translation files
+LOCALE_PATHS = [
+    BASE_DIR / 'locale',
+]
 
 TIME_ZONE = 'UTC'
 
