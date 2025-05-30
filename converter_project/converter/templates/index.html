@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Converter</title>
+</head>
+<body>
+    <h1>Number Converter</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="number_input">Enter number:</label>
+        <input type="text" id="number_input" name="number_input"><br><br>
+
+        <label for="input_base">From base:</label>
+        <select id="input_base" name="input_base">
+            <option value="decimal">Decimal</option>
+            <option value="binary">Binary</option>
+            <option value="octal">Octal</option>
+            <option value="hexadecimal">Hexadecimal</option>
+        </select><br><br>
+
+        <label for="output_base">To base:</label>
+        <select id="output_base" name="output_base">
+            <option value="decimal">Decimal</option>
+            <option value="binary">Binary</option>
+            <option value="octal">Octal</option>
+            <option value="hexadecimal">Hexadecimal</option>
+        </select><br><br>
+
+        <input type="submit" value="Convert">
+    </form>
+
+    {% if result %}
+        <h2>Result:</h2>
+        <p>{{ result }}</p>
+    {% endif %}
+
+    {% if error %}
+        <h2>Error:</h2>
+        <p>{{ error }}</p>
+    {% endif %}
+</body>
+</html> 
