@@ -24,14 +24,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent # This should now point to 'dj
 SECRET_KEY = 'G9VRmVEgDn3E7plPi0bEA2z-teOuXcV5mBszsBbXJcWRq9b-uLVFQPqODYXR6UqdIvI'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['your-domain.com', 'www.your-domain.com', 'localhost', '127.0.0.1'] # Add your actual domain here
 
 # Production Security Settings
-CSRF_COOKIE_SECURE = False
-# SESSION_COOKIE_SECURE = True
-SECURE_SSL_REDIRECT = False # Explicitly False for local dev
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = False # Cloudflare handles SSL
 # SECURE_HSTS_SECONDS = 2592000  # 30 days. Increase after testing.
 # SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 # SECURE_HSTS_PRELOAD = True
@@ -149,7 +149,7 @@ STATIC_URL = 'static/'
 # ]
 # For deployment, you'll also need STATIC_ROOT:
 STATIC_ROOT = BASE_DIR / 'staticfiles_collected' # Added for collectstatic
-STATIC_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 # Default primary key field type
