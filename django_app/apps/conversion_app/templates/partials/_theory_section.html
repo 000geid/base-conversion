@@ -1,0 +1,73 @@
+{% load i18n %}
+<div class="theory-section bg-light p-4 mb-4 rounded">
+    <h2 class="text-center mb-4">{% trans "Understanding Number Systems" %}</h2>
+    
+    <div class="row">
+        <div class="col-md-12 mb-4">
+            <h3>{% trans "What are Number Systems?" %}</h3>
+            <p>{% trans "A number system is a way of representing numbers using a specific set of symbols or digits. The most common number system we use daily is the decimal system (base 10), but computers and digital systems use other bases like binary, octal, and hexadecimal." %}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">{% trans "Decimal (Base 10)" %}</h5>
+                    <p class="card-text">{% trans "Uses digits 0-9. Each position represents a power of 10." %}</p>
+                    <p class="card-text"><strong>{% trans "Example:" %}</strong> 123 = 1×10² + 2×10¹ + 3×10⁰</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6 mb-3">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title text-success">{% trans "Binary (Base 2)" %}</h5>
+                    <p class="card-text">{% trans "Uses only 0 and 1. Used in computer systems." %}</p>
+                    <p class="card-text"><strong>{% trans "Example:" %}</strong> 101 = 1×2² + 0×2¹ + 1×2⁰ = 5</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6 mb-3">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title text-warning">{% trans "Octal (Base 8)" %}</h5>
+                    <p class="card-text">{% trans "Uses digits 0-7. Often used in computing." %}</p>
+                    <p class="card-text"><strong>{% trans "Example:" %}</strong> 17 = 1×8¹ + 7×8⁰ = 15</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6 mb-3">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title text-danger">{% trans "Hexadecimal (Base 16)" %}</h5>
+                    <p class="card-text">{% trans "Uses digits 0-9 and letters A-F. Common in programming." %}</p>
+                    <p class="card-text"><strong>{% trans "Example:" %}</strong> 1A = 1×16¹ + 10×16⁰ = 26</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <h3>{% trans "Why Learn About Different Bases?" %}</h3>
+            <ul class="list-unstyled">
+                <li class="mb-2"><i class="text-primary">🔧</i> <strong>{% trans "Programming:" %}</strong> {% trans "Understanding binary and hexadecimal is essential for computer programming" %}</li>
+                <li class="mb-2"><i class="text-success">🧮</i> <strong>{% trans "Mathematics:" %}</strong> {% trans "Different bases help understand mathematical concepts and number theory" %}</li>
+                <li class="mb-2"><i class="text-warning">💻</i> <strong>{% trans "Computing:" %}</strong> {% trans "Computers process information in binary, making it fundamental to digital technology" %}</li>
+                <li class="mb-2"><i class="text-danger">🎯</i> <strong>{% trans "Problem Solving:" %}</strong> {% trans "Base conversions develop logical thinking and mathematical skills" %}</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+        <h4 class="mb-3">{% trans "Ready to Practice?" %}</h4>
+        <p class="lead">{% trans "Now that you understand the theory, let's put it into practice!" %}</p>
+        <button class="btn btn-primary btn-lg" onclick="document.getElementById('tools-section').scrollIntoView({behavior: 'smooth'})">
+            {% trans "Try Our Calculator!" %} 🚀
+        </button>
+    </div>
+</div> 
