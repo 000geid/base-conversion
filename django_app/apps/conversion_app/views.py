@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.utils.translation import gettext_lazy as _
+from django.utils.translation import gettext_lazy as _, activate
 
 # Helper function to convert to decimal
 def to_decimal(number_str, base):
@@ -27,6 +27,9 @@ def from_decimal(decimal_number, base):
     raise ValueError(_("Invalid base for conversion from decimal."))
 
 def index(request):
+    # Activate Spanish language
+    activate('es')
+    
     context = {
         'number_input': None, 'input_base_selected': 'decimal', 'output_base_selected': 'binary',
         'result': None, 'error': None,

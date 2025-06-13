@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent # This should now point to 'dj
 SECRET_KEY = 'G9VRmVEgDn3E7plPi0bEA2z-teOuXcV5mBszsBbXJcWRq9b-uLVFQPqODYXR6UqdIvI'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['your-domain.com', 'www.your-domain.com', 'localhost', '127.0.0.1'] # Add your actual domain here
 
@@ -73,6 +73,7 @@ TEMPLATES = [
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
+                'django.template.context_processors.i18n',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
@@ -116,7 +117,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es'
 
 # Add Spanish as an available language
 LANGUAGES = [
