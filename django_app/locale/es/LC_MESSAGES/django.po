@@ -208,3 +208,79 @@ msgstr ""
 #, python-brace-format
 msgid "An unexpected error occurred during calculation: {error_message}"
 msgstr "Ocurrió un error inesperado durante la calculación: {error_message}"
+
+# Theory section translations
+msgid "Understanding Number Systems"
+msgstr "Entendiendo los Sistemas Numéricos"
+
+msgid "What are Number Systems?"
+msgstr "¿Qué son los Sistemas Numéricos?"
+
+msgid "A number system is a way of representing numbers using a specific set of symbols or digits. The most common number system we use daily is the decimal system (base 10), but computers and digital systems use other bases like binary, octal, and hexadecimal."
+msgstr "Un sistema numérico es una forma de representar números usando un conjunto específico de símbolos o dígitos. El sistema numérico más común que usamos diariamente es el sistema decimal (base 10), pero las computadoras y sistemas digitales usan otras bases como binario, octal y hexadecimal."
+
+msgid "Decimal (Base 10)"
+msgstr "Decimal (Base 10)"
+
+msgid "Uses digits 0-9. Each position represents a power of 10."
+msgstr "Usa dígitos 0-9. Cada posición representa una potencia de 10."
+
+msgid "Example:"
+msgstr "Ejemplo:"
+
+msgid "Binary (Base 2)"
+msgstr "Binario (Base 2)"
+
+msgid "Uses only 0 and 1. Used in computer systems."
+msgstr "Usa solo 0 y 1. Utilizado en sistemas computacionales."
+
+msgid "Octal (Base 8)"
+msgstr "Octal (Base 8)"
+
+msgid "Uses digits 0-7. Often used in computing."
+msgstr "Usa dígitos 0-7. Frecuentemente usado en computación."
+
+msgid "Hexadecimal (Base 16)"
+msgstr "Hexadecimal (Base 16)"
+
+msgid "Uses digits 0-9 and letters A-F. Common in programming."
+msgstr "Usa dígitos 0-9 y letras A-F. Común en programación."
+
+msgid "Why Learn About Different Bases?"
+msgstr "¿Por qué Aprender sobre Diferentes Bases?"
+
+msgid "Programming:"
+msgstr "Programación:"
+
+msgid "Understanding binary and hexadecimal is essential for computer programming"
+msgstr "Entender binario y hexadecimal es esencial para la programación de computadoras"
+
+msgid "Mathematics:"
+msgstr "Matemáticas:"
+
+msgid "Different bases help understand mathematical concepts and number theory"
+msgstr "Las diferentes bases ayudan a entender conceptos matemáticos y teoría de números"
+
+msgid "Computing:"
+msgstr "Computación:"
+
+msgid "Computers process information in binary, making it fundamental to digital technology"
+msgstr "Las computadoras procesan información en binario, haciéndolo fundamental para la tecnología digital"
+
+msgid "Problem Solving:"
+msgstr "Resolución de Problemas:"
+
+msgid "Base conversions develop logical thinking and mathematical skills"
+msgstr "Las conversiones de bases desarrollan el pensamiento lógico y las habilidades matemáticas"
+
+msgid "Ready to Practice?"
+msgstr "¿Listo para Practicar?"
+
+msgid "Now that you understand the theory, let's put it into practice!"
+msgstr "¡Ahora que entiendes la teoría, pongámosla en práctica!"
+
+msgid "Try Our Calculator!"
+msgstr "¡Prueba Nuestra Calculadora!"
+
+msgid "Interactive Tools"
+msgstr "Herramientas Interactivas"
